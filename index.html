@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Coins</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="favicon.png" type="image/png">
+</head>
+<body>
+  <img style="width: 150px;" src="assets/img/tikpng.png" alt="logo">
+  <div class="container">
+    <div class="header">
+      <h1>Get Coins</h1>
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search user" id="searchInput" />
+        <div class="loader" id="loader"></div>
+        <div class="user-found" id="userFound"><div class="check"></div>User found</div>
+        <div id="tiktokProfile" class="tiktok-profile"></div>
+      </div>
+    </div>
+
+    <p class="promo-text">Top-up: Save 25% with a lower third-party service fee.</p>
+
+    <div class="coins-grid">
+      <button class="coin-button" data-coins="30" data-price="0.30">
+        <div class="coin-amount"><img src="assets/img/cointik.webp" class="coin-icon" alt="coin">30</div>
+        <div class="coin-price">$0.30</div>
+      </button>
+      <button class="coin-button" data-coins="350" data-price="3.50">
+        <div class="coin-amount"><img src="assets/img/cointik.webp" class="coin-icon" alt="coin">350</div>
+        <div class="coin-price">$3.50</div>
+      </button>
+      <button class="coin-button" data-coins="700" data-price="7.00">
+        <div class="coin-amount"><img src="assets/img/cointik.webp" class="coin-icon" alt="coin">700</div>
+        <div class="coin-price">$7.00</div>
+      </button>
+      <button class="coin-button" data-coins="1400" data-price="14.00">
+        <div class="coin-amount"><img src="assets/img/cointik.webp" class="coin-icon" alt="coin">1,400</div>
+        <div class="coin-price">$14.00</div>
+      </button>
+      <button class="coin-button" data-coins="3500" data-price="35.00">
+        <div class="coin-amount"><img src="assets/img/cointik.webp" class="coin-icon" alt="coin">3,500</div>
+        <div class="coin-price">$35.00</div>
+      </button>
+      <button class="coin-button" data-coins="7000" data-price="70.00">
+        <div class="coin-amount"><img src="assets/img/cointik.webp" class="coin-icon" alt="coin">7,000</div>
+        <div class="coin-price">$70.00</div>
+      </button>
+      <button class="coin-button" data-coins="17500" data-price="175.00">
+        <div class="coin-amount"><img src="assets/img/cointik.webp" class="coin-icon" alt="coin">17,500</div>
+        <div class="coin-price">$175.00</div>
+      </button>
+      <div class="custom-input-container" id="customContainer">
+        <div class="coin-amount"><img src="assets/img/cointik.webp" class="coin-icon" alt="coin"></div>
+        <input type="text" class="custom-input" id="customCoins" placeholder="Custom amount" />
+      </div>
+    </div>
+
+    <div class="special-offer"><strong>Special offer</strong> - 5% cashback on your next order</div>
+
+    <div class="payment-method">
+      <span>Payment method</span>
+      <img class="card-logo" src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg">
+      <img class="card-logo" src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg">
+    </div>
+
+    <div class="total-section">
+      <span>Total:</span>
+      <span><span id="totalCoins">0</span> coins — <span id="totalPrice">$0.00</span></span>
+    </div>
+
+    <button class="recharge-button" id="rechargeBtn">Recharge</button>
+  </div>
+
+  
+<div class="modal" id="paymentModal">
+  <div class="modal-content order-summary">
+    <button class="close-modal" id="closePaymentModal">×</button>
+    <h2 class="summary-title">Order Summary</h2>
+    <p class="secure-payment">🔒 Secure Payment</p>
+
+    <div class="summary-section">
+      <p class="summary-label">Account</p>
+      <strong><p class="summary-value" id="summaryAccount"> </p>
+    </div></strong>
+
+    <div class="summary-section">
+      <p class="summary-label">Total</p>
+      <p class="summary-value"><span id="summaryCoins">0</span> Coins</p>
+    </div>
+
+    <div class="summary-section">
+      <p class="summary-label">Total price</p>
+      <strong> <p class="summary-value" id="summaryPrice">$0.00</p></strong>
+    </div>
+
+    <div class="payment-methods-section">
+      <p class="summary-label">Payment method</p>
+
+      <div class="payment-options">
+
+        <label class="payment-option">
+          <div class="payment-row">
+            <input type="radio" name="payment" checked>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" class="pay-logo-small">
+            <span><strong> **** 4030</span></strong>
+            <span class="dots">⋮</span>
+          </div>
+        </label>
+
+        <label class="payment-option">
+          <div class="payment-row">
+            <input type="radio" name="payment">
+            <span><strong>Add debit or credit card</span></strong>
+            <div class="multi-icons">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" class="pay-logo-small">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple Pay" class="pay-logo-small">
+              <img src="gpay.png" alt="Google Pay" class="pay-logo-small">
+            </div>
+          </div>
+        </label>
+
+        <label class="payment-option">
+          <div class="payment-row paypal-row">
+            <div class="left-group">
+              <input type="radio" name="payment">
+              <span class="paypal-text"><strong> PayPal</span></strong>
+            </div>
+            <img style="width: 45px;" src="paypal.png" alt="PayPal" class="pay-logo-small">
+          </div>
+        </label>
+
+      </div>
+    </div>
+
+    <p class="legal-text">
+      By tapping <strong>Pay</strong> you confirm your purchase and accept our policies.
+      Coins are non-refundable.
+    </p>
+
+    <button class="buy-button" id="buyBtn">Pay</button>
+  </div>
+</div>
+
+
+<div class="modal" id="processingModal">
+  <div class="modal-content processing-box">
+    <h2 class="processing-title">Processing payment</h2>
+    <div class="loading-dots">
+      <div class="dot red"></div>
+      <div class="dot green"></div>
+      <div class="dot blue"></div>
+    </div>
+    <div class="countdown" id="countdown">05:00</div>
+    <p class="processing-text">Processing your payment. Please do not close this page.</p>
+  </div>
+</div>
+
+<div id="successModal" class="modal">
+  <div class="order-summary" style="max-width: 340px;">
+    <div class="success-message">
+      <div class="circle">
+        <img src="check.png" alt="check" style="width: 117px; height: 117px; object-fit: contain;">
+      </div>
+      <p class="success-text">Payment completed</p>
+      <p style="font-size:14px; color:#555;">You have added <strong id="paidAmount">$0.00</strong> to your account</p>
+      <p style="font-size:13px; color:#777;">You can use your coins to send virtual gifts</p>
+      <button id="acceptSuccess" class="accept-button">Close</button>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="assets/js/tiktok.js"></script>
+
+<!-- 🟢 CUSTOM AMOUNT MODAL (mobile only) -->
+<div class="modal" id="customModal">
+  <div class="custom-modal-content">
+    <div class="custom-header">
+      <h2>Customize</h2>
+    </div>
+
+    <div class="custom-display">
+      <img src="assets/img/cointik.webp" alt="coin" class="custom-coin-icon">
+      <input type="text" id="customInputValue" placeholder="0">
+    </div>
+
+    <div class="custom-keypad">
+      <div class="key">1</div>
+      <div class="key">2</div>
+      <div class="key">3</div>
+      <div class="key">4</div>
+      <div class="key">5</div>
+      <div class="key">6</div>
+      <div class="key">7</div>
+      <div class="key">8</div>
+      <div class="key">9</div>
+      <div class="key">000</div>
+      <div class="key">0</div>
+      <div class="key delete">⌫</div>
+    </div>
+
+    <div class="custom-footer">
+      <p>Total: <span id="customTotal">0</span> coins</p>
+      <button id="customRechargeBtn">Recharge</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
