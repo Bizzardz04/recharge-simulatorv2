@@ -13,5 +13,7 @@ Animaciones al hacer hover en los botones
 ✍️ Autor: [Bizzardz]
 
 
-<img width="1920" height="1080" alt="preview-" src="https://github.com/user-attachments/assets/30556035-24f6-4514-9f4e-73ecbb72d67a" />
+<img width="1920" height="1080" alt="preview-" src="<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e82f76d6-a227-4d2d-902b-32b5ea0a71b8" />
+" />
+
 
