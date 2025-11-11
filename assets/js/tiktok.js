@@ -142,6 +142,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (desktopCustomInput) desktopCustomInput.value = "";
       if (mobileCustomInput) mobileCustomInput.value = "";
       if (customTotal) customTotal.textContent = "0";
+      if (tiktokProfile) tiktokProfile.style.display = "none";
+      if (userFound) userFound.style.display = "none";
+
     });
   }
 
@@ -413,15 +416,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  document.addEventListener("click", (e) => {
-    if (tiktokProfile && searchInput) {
-      const searchContainer = searchInput.closest(".search-container");
-      if (searchContainer && !searchContainer.contains(e.target)) {
-        tiktokProfile.style.display = "none";
-        userFound.style.display = "none";
-      }
-    }
-  });
+ 
+
+
 
   if (searchInput) {
     const searchContainer = searchInput.closest(".search-container");
